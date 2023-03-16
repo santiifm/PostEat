@@ -1,24 +1,11 @@
-# README
+PostEat es una red social básica hecha en Ruby on Rails, donde la gente puede compartir fotos o reseñas de su comida o lugares de comida a los que atiende. A estas fotos y reseñas se les puede comentar de forma que se pueda generar discurso sobre cada post.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Utiliza:
 
-Things you may want to cover:
+Ruby 2.7.6
 
-* Ruby version
+Rails 7.0.4.3
 
-* System dependencies
+Devise
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Bootstrap
