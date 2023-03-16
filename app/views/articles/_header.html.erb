@@ -17,6 +17,11 @@
       </li>
 
     <% else %>
+
+      <li class="nav-item mb-2 ms-2">
+      <%= link_to "Crear Post", new_article_path, :class=>"nav-link", style: "color:#FFFFFF"  %>
+      </li>
+      
       <li class="nav-item mb-2 ms-2">
       <%= button_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class:"nav-link btn btn-black", style:"color: #FFFFFF"%>
       </li>
@@ -24,9 +29,10 @@
       <li class="nav-item mb-2 ms-2">
       <%= link_to  'Editar Usuario', edit_user_registration_path, class:"nav-link", style:"color: #FFFFFF"%>
       </li>
+
       <div class="ms-auto">
         <li>
-        <p class="nav-item mb-2 ms-2 ms-auto" style="color: #FFFFFF">Bienvenido <%=  current_user.name %></p>
+        <p class="nav-item mb-2 ms-2 ms-auto" style="color: #FFFFFF">Bienvenido <%=  current_user.email %></p>
         </li>
       </div>
     <% end %>

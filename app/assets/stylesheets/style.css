@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(231, 231, 231);
+    text-shadow: 2px,2px,3px #000;
+  }
+.field label {
+  padding-bottom: 3px;
+  color: white;
+  text-shadow: 2px,2px,3px #000;
+}
+.form.label {
+  padding-bottom: 3px;
+  color: white;
+  text-shadow: 2px,2px,3px #000;
+}
+.field{
+  padding-bottom: 3px;
+}
+.article-posteat {
+  margin-top: 10px;
+  background-color: rgb(53, 53, 53);
+  border-radius: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 15px;
+  padding-bottom: 30px;
+}
+.article-posteat h1{
+  color: rgb(155, 155, 155)
+}
+.form-posteat {
+  margin-top: 10px;
+  width: 50%;
+  background-color: rgb(53, 53, 53);
+  border-radius: 15px;
+}
+.form-posteat h1, h2, p, s, em{
+  color: #FFFFFF;
+}
+.table{
+  overflow: hidden;
+  border-radius: 10px;
+}
+.btn-dark{
+  background-color: rgb(90, 90, 90);
+}

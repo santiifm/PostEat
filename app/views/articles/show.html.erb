@@ -2,9 +2,8 @@
 
 <%= render @article %>
 
-<div>
-  <%= link_to "Edit this article", edit_article_path(@article) %> |
-  <%= link_to "Back to articles", articles_path %>
-
-  <%= button_to "Destroy this article", @article, method: :delete %>
+<div class="mt-2 ms-2">
+  <%= link_to "Editar Post", edit_article_path(@article), :class=>"btn btn-dark" %> 
+  <%= link_to "Volver", articles_path, :class=>"btn btn-dark" %>
+  <%= button_to "Borrar post", @article, method: :delete, :class=>"btn btn-dark mt-2" %>
 </div>

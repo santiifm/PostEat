@@ -1,14 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Articles</h1>
+<h1>Posts</h1>
 
-<div id="articles">
+<div id="Artículos">
   <% @articles.each do |article| %>
     <%= render article %>
-    <p>
-      <%= link_to "Show this article", article %>
+    <p class="pt-2 ps-1">
+      <%= link_to "Mostrar Post", article, :class=>"btn btn-sm btn-dark"  %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New article", new_article_path %>

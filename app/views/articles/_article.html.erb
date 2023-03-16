@@ -1,2 +1,24 @@
-<div id="<%= dom_id article %>">
+<div id="<%= dom_id article %>" class="container article-posteat">
+  <div class="row">
+    <div class="col">
+      <p>
+        <h1><strong><%= article.title %></strong></h1>
+      </p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-6">
+      <p> <%= article.body %> </p>
+    </div>
+    <div class="col-6">
+        <%if article.photo.attached?%>
+        <%= image_tag(article.photo, :class => "img-fluid w-75")%>
+        <%end%>
+    </div>
+  </div>
+  <div class="row">
+    <p>
+      <strong>Creado por: <%= article.created_by %></strong>
+    </p>
+  </div>
 </div>
