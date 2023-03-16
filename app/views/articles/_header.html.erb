@@ -1,0 +1,34 @@
+<nav class="navbar bg-dark">
+  <div class="container-fluid justify-content-start">
+
+    <%= link_to  'PostEat', root_path, class:"navbar-brand fs-1", style:"color: #FFFFFF"%>
+
+
+    <li class="nav-item mb-2 ms-2">
+    <%= link_to  'Artículos', articles_path, class:"nav-link", style:"color: #FFFFFF"%>
+    </li>
+
+    <% if !user_signed_in?%>
+      <li class="nav-item mb-2 ms-2">
+      <%= link_to  'Iniciar Sesión', new_user_session_path, class:"nav-link", style:"color: #FFFFFF"%>
+      </li>
+      <li class="nav-item mb-2 ms-2">
+      <%= link_to  'Registrarse', new_user_registration_path, class:"nav-link", style:"color: #FFFFFF"%>
+      </li>
+
+    <% else %>
+      <li class="nav-item mb-2 ms-2">
+      <%= button_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class:"nav-link btn btn-black", style:"color: #FFFFFF"%>
+      </li>
+
+      <li class="nav-item mb-2 ms-2">
+      <%= link_to  'Editar Usuario', edit_user_registration_path, class:"nav-link", style:"color: #FFFFFF"%>
+      </li>
+      <div class="ms-auto">
+        <li>
+        <p class="nav-item mb-2 ms-2 ms-auto" style="color: #FFFFFF">Bienvenido <%=  current_user.name %></p>
+        </li>
+      </div>
+    <% end %>
+  </div>
+</nav>

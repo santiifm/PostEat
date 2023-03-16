@@ -1,0 +1,28 @@
+<div class="container text-center form-vaypol pt-3 pb-3">
+  <h2 style="color: #FFFFFF">Iniciar Sesión</h2>
+
+  <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="field">
+      <%= f.label :email %><br />
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+    </div>
+
+    <div class="field">
+      <%= f.label :password, 'Contraseña' %><br />
+      <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
+
+    <% if devise_mapping.rememberable? %>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label :remember_me, 'Mantener la sesión iniciada' %>
+      </div>
+    <% end %>
+
+    <div class="actions">
+      <%= f.submit "Iniciar Sesión", type: "submit", :class=> "btn btn-dark mb-1 fs-5" %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>
