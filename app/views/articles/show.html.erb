@@ -1,9 +1,15 @@
-<p style="color: green"><%= notice %></p>
+<div class="container mt-4">
 
-<%= render @article %>
-
-<div class="mt-2 ms-2">
-  <%= link_to "Editar Post", edit_article_path(@article), :class=>"btn btn-dark" %> 
-  <%= link_to "Volver", articles_path, :class=>"btn btn-dark" %>
-  <%= button_to "Borrar post", @article, method: :delete, :class=>"btn btn-dark mt-2" %>
+  <%= render @article %>
+  
+  <% if @article.created_by == current_user.email %>
+  <%= link_to "Editar Post", edit_article_path(@article), :class=>"btn btn-sm btn-dark mb-1 mt-1" %>
+  <%= button_to "Borrar post", @article, method: :delete, :class=>"btn btn-sm btn-dark" %>
+  <% end %>
+  
+  <div class="container article-posteat">
+    <h2>Comentarios (<%= @article.comments.size %>)</h2>
+    <%= render partial: 'articles/comment', collection: @article.comments.reverse %>
+    <%= render partial: 'comments/form' %>
+  </div>
 </div>

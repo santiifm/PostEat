@@ -1,0 +1,8 @@
+<%= form_for [ @article, @comment ] do |f| %>
+
+  <p>
+    <%= f.label :body, "Unite a la discusión!", :class=>"fs-5 mt-1"%><br/>
+    <%= f.text_area(:body, size: '90x3') %><br/>
+    <%= f.submit 'Enviar Comentario', :class=> "btn btn-dark" %>
+  </p>
+<% end %>

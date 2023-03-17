@@ -8,6 +8,8 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1 or /articles/1.json
   def show
+    @comment = Comment.new
+    @comment.article_id = @article.id
   end
 
   # GET /articles/new
@@ -21,6 +23,9 @@ class ArticlesController < ApplicationController
 
   # GET /articles/1/edit
   def edit
+    if current_user.email != @article.created_by
+      render  "articles/show"
+    end
   end
 
   # POST /articles or /articles.json
@@ -53,11 +58,14 @@ class ArticlesController < ApplicationController
 
   # DELETE /articles/1 or /articles/1.json
   def destroy
-    @article.destroy
-
-    respond_to do |format|
-      format.html { redirect_to articles_url, notice: "Article was successfully destroyed." }
-      format.json { head :no_content }
+    if current_user.email != @article.created_by
+      render  "articles/show"
+    else
+      @article.destroy
+      respond_to do |format|
+        format.html { redirect_to articles_url, notice: "El artículo fue eliminado exitosamente." }
+        format.json { head :no_content }
+      end
     end
   end
 

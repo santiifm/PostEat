@@ -1,0 +1,14 @@
+<div class="comment-box">
+  <div class="col d-flex">
+    <h4><%= comment.author %> dice:</h4>
+    <div class="ms-auto">
+  <%= button_to "Borrar", article_comment_path(@article, comment), method: :delete, :class=>"btn btn-sm btn-dark" %>
+    </div>
+  </div>
+  <div class="pt-2 pb-3">
+    <p class="comment"><%= comment.body %></p>
+  </div>
+  <div class="ms-auto">
+    <p class="fw-light" style="font-size: 13px"><%= localize(comment.created_at, :format => :long) %></p>
+  </div>
+</div>
