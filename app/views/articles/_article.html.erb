@@ -16,9 +16,6 @@
         <%end%>
     </div>
   </div>
-  <div class="row">
-    <p>
-      <strong>Creado por: <%= article.created_by %></strong>
-    </p>
-  </div>
+  <p class="fw-semibold pt-3" style="font-size: 12px">Creado por: <%= article.created_by %>
+   |  <%= localize(article.created_at, :format => :long) %></p>
 </div>

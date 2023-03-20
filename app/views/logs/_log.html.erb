@@ -1,0 +1,8 @@
+<div class="comment-box">
+  <div class="col d-flex">
+    <p>El usuario <%= log.user_id %> 
+    ha <%= I18n.t("#{log.action}") %> 
+    un <%= I18n.t("#{log.loggable_type}") %> 
+    el <%= localize(log.created_at, :format => :long) %></p>
+  </div>
+</div>

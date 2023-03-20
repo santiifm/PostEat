@@ -1,0 +1,9 @@
+es:
+  create: "creado"
+  destroy: "destruido"
+  edit: "editado"
+  Comment: "comentario"
+  Article: "artículo"
+  time:
+    formats:
+      long: "%d-%m-%Y %H:%M:%S"

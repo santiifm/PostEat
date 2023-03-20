@@ -8,6 +8,10 @@
     <%= link_to  'Artículos', articles_path, class:"nav-link", style:"color: #FFFFFF"%>
     </li>
 
+    <li class="nav-item mb-2 ms-2">
+    <%= link_to  'Logs', logs_path, class:"nav-link", style:"color: #FFFFFF"%>
+    </li>
+
     <% if !user_signed_in?%>
       <li class="nav-item mb-2 ms-2">
       <%= link_to  'Iniciar Sesión', new_user_session_path, class:"nav-link", style:"color: #FFFFFF"%>

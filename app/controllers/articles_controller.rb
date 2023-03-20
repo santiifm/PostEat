@@ -26,14 +26,15 @@ class ArticlesController < ApplicationController
     if current_user.email != @article.created_by
       render  "articles/show"
     end
+    create_log
   end
 
   # POST /articles or /articles.json
   def create
     @article = Article.new(article_params)
-
     respond_to do |format|
       if @article.save
+        create_log
         format.html { redirect_to article_url(@article), notice: "El artículo fué creado exitosamente" }
         format.json { render :show, status: :created, location: @article }
       else
@@ -61,12 +62,17 @@ class ArticlesController < ApplicationController
     if current_user.email != @article.created_by
       render  "articles/show"
     else
+      create_log
       @article.destroy
       respond_to do |format|
         format.html { redirect_to articles_url, notice: "El artículo fue eliminado exitosamente." }
         format.json { head :no_content }
       end
     end
+  end
+
+  def create_log
+    @article.logs.create(user_id: current_user.id, action: action_name)
   end
 
   private

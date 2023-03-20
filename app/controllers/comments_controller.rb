@@ -6,6 +6,7 @@ class CommentsController < ApplicationController
     @comment.article_id = params[:article_id]
     @comment.author = current_user.email
     @comment.save
+    create_log
 
     redirect_to article_path(@comment.article)
   end
@@ -14,12 +15,17 @@ class CommentsController < ApplicationController
     if current_user.email != @comment.author
       render  "articles/show"
     else
+      create_log
       @comment.destroy
       respond_to do |format|
         format.html { redirect_to article_url, notice: "El comentario fue eliminado exitosamente." }
         format.json { head :no_content }
       end
     end
+  end
+
+  def create_log
+    @comment.logs.create(user_id: current_user.id, action: action_name)
   end
 
   private
