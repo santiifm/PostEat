@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 
   def destroy
     if current_user.email != @comment.author
-      render  "articles/show"
+      redirect_to article_url
     else
       create_log
       @comment.destroy

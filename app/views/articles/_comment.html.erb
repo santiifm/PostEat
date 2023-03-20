@@ -2,7 +2,9 @@
   <div class="col d-flex">
     <h4><%= comment.author %> dice:</h4>
     <div class="ms-auto">
-  <%= button_to "Borrar", article_comment_path(@article, comment), method: :delete, :class=>"btn btn-sm btn-dark" %>
+    <% if current_user.email == comment.author%>
+      <%= button_to "Borrar", article_comment_path(@article, comment), method: :delete, :class=>"btn btn-sm btn-dark" %>
+    <% end %>
     </div>
   </div>
   <div class="pt-2 pb-3">

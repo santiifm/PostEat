@@ -1,6 +1,7 @@
 <div class="comment-box">
   <div class="col d-flex">
-    <p>El usuario <%= log.user_id %> 
+    <% @user = User.find(log.user_id)%>
+    <p>El usuario <%= @user.email %> 
     ha <%= I18n.t("#{log.action}") %> 
     un <%= I18n.t("#{log.loggable_type}") %> 
     el <%= localize(log.created_at, :format => :long) %></p>
